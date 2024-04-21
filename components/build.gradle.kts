@@ -46,14 +46,8 @@ android {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
-            groupId = "org.gradle.sample"
-            artifactId = "library"
-            version = "1.1"
-
-//            afterEvaluate {
-//                from(components["java"])
-//            }
+        create<MavenPublication>("release") {
+            from(components.findByName("release"))
         }
     }
 }
