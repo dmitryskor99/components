@@ -49,7 +49,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "ru.dmitryskor.components"
             artifactId = "components"
-            version = "1.0.3"
+            version = "1.0.0"
 
             from(components.findByName("release"))
         }
