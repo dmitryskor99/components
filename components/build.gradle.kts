@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
+    `maven-publish`
 }
 
 android {
@@ -60,4 +60,16 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "org.gradle.sample"
+            artifactId = "library"
+            version = "1.1"
+
+//            from(components["java"])
+        }
+    }
 }
